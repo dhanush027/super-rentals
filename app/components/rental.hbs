@@ -1,0 +1,30 @@
+{{yield}}
+<article class="rental">
+  <Rental::Image
+    src={{@rental.image}}
+    alt="A picture of {{@rental.title}}"
+  />  
+  <div class="details">
+    <h3>{{@rental.title}}</h3>
+    <div class="detail owner">
+      <span>Type:</span> {{@rental.owner}}
+    </div>
+    <div class="detail type">
+      <span>Type:</span> {{@rental.type}}
+    </div>
+    <div class="detail location">
+      <span>Type:</span> {{@rental.city}}
+    </div>
+    <div class="detail bedrooms">
+      <span>Type:</span> {{@rental.bedrooms}}
+    </div>
+  </div>
+  <Map
+    @lat={{@rental.location.lat}}
+    @lng={{@rental.location.lng}}
+    @zoom="9"
+    @width="150"
+    @height="150"
+    alt="A map of {{@rental.title}}"
+  />
+</article>
